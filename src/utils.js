@@ -2,15 +2,25 @@
  * @param {Date} date1
  * @param {Date} date2
  */
-export function weeksBetween(date1, date2) {
-  const msPerWeek = 1000 * 60 * 60 * 24 * 7;
+export function getWeekNumber(date1, date2) {
+  const msPerDay = 1000 * 60 * 60 * 24;
 
-  const date1_ms = date1.getTime();
-  const date2_ms = date2.getTime();
+  const getSunday = (d) => {
+    const day = d.getDay();
+    const sunday = new Date(d);
+    sunday.setDate(d.getDate() - day);
+    sunday.setHours(0, 0, 0, 0);
+    return sunday;
+  };
 
-  const difference_ms = Math.abs(date2_ms - date1_ms);
+  const sunday1 = getSunday(date1);
+  const sunday2 = getSunday(date2);
 
-  return Math.floor(difference_ms / msPerWeek) + 1;
+  const daysBetween = Math.floor(
+    (sunday2.getTime() - sunday1.getTime()) / msPerDay,
+  );
+
+  return Math.floor(daysBetween / 7) + 1;
 }
 
 export const FIRST_DAY = new Date(2026, 0, 20);
