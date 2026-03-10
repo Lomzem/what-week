@@ -10,6 +10,7 @@
         "tests": "bun run tests/*.js"
     },
     "devDependencies": {
-        "vite": "^7.3.1"
+        "vite": "^7.3.1",
+        "vite-plugin-singlefile": "^2.3.0"
     }
 }
