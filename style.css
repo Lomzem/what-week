@@ -149,6 +149,23 @@ main {
   letter-spacing: 0.05em;
 }
 
+.github-link {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(232, 232, 237, 0.3);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+  z-index: 1;
+}
+
+.github-link:hover {
+  color: rgba(232, 232, 237, 0.6);
+}
+
 @media (max-width: 480px) {
   .week-number {
     font-size: 6rem;
