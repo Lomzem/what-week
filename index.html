@@ -2,10 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>What Week?</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <p>The current date is <span id="currentDate"></span></p>
-  <h1>Week <span id="weekNum"></span></h1>
-  <script type="module" src="src/script.js"></script>
+  <body>
+    <main>
+      <p class="label">It's currently</p>
+      <div class="week-display">
+        <span class="week-prefix">Week</span>
+        <span id="weekNum" class="week-number"></span>
+      </div>
+      <p class="date"><span id="currentDate"></span></p>
+    </main>
+    <script type="module" src="src/script.js"></script>
+  </body>
 </html>
