@@ -16,11 +16,11 @@ export function getWeekNumber(date1, date2) {
     const sunday1 = getSunday(date1);
     const sunday2 = getSunday(date2);
 
-    const daysBetween = Math.floor(
-        (sunday2.getTime() - sunday1.getTime()) / msPerDay,
-    );
+    const daysBetween =
+        (sunday2.getTime() - sunday1.getTime()) / msPerDay -
+        sunday2.getDay();
 
-    return Math.floor(daysBetween / 7) + 1;
+    return Math.ceil(daysBetween / 7) + 1;
 }
 
 export const FIRST_DAY = new Date(2026, 0, 20);
