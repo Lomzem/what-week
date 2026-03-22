@@ -8,17 +8,17 @@ const START_DATE = new Date(2026, 0, 20);
  * @param {number} expected
  */
 function TEST(description, date, expected) {
-  const result = getWeekNumber(START_DATE, date);
-  if (result !== expected) {
-    console.error(`FAILED TEST: ${description}`);
-    console.error(
-      `date1=${START_DATE.toDateString()} date2=${date.toDateString()}`,
-    );
-    console.error(`Expected: ${expected}`);
-    console.error(`Got: ${result}`);
-  } else {
-    console.log(`test passed: ${description}`);
-  }
+    const result = getWeekNumber(START_DATE, date);
+    if (result !== expected) {
+        console.error(`FAILED TEST: ${description}`);
+        console.error(
+            `date1=${START_DATE.toDateString()} date2=${date.toDateString()}`,
+        );
+        console.error(`Expected: ${expected}`);
+        console.error(`Got: ${result}`);
+    } else {
+        console.log(`test passed: ${description}`);
+    }
 }
 
 TEST("same day", new Date(2026, 0, 20), 1);
@@ -35,3 +35,7 @@ TEST("", new Date(2026, 0, 31), 2);
 TEST("", new Date(2026, 1, 1), 3);
 
 TEST("Midterm Week", new Date(2026, 2, 10), 8);
+TEST("Spring Break Start", new Date(2026, 2, 15), 9);
+TEST("Spring Break Start", new Date(2026, 2, 16), 9);
+TEST("Spring Break Sat", new Date(2026, 2, 21), 9);
+TEST("Spring Break Sun", new Date(2026, 2, 22), 10);
