@@ -38,4 +38,5 @@ TEST("Midterm Week", new Date(2026, 2, 10), 8);
 TEST("Spring Break Start", new Date(2026, 2, 15), 9);
 TEST("Spring Break Start", new Date(2026, 2, 16), 9);
 TEST("Spring Break Sat", new Date(2026, 2, 21), 9);
-TEST("Spring Break Sun", new Date(2026, 2, 22), 10);
+TEST("Spring Break End Sun", new Date(2026, 2, 22), 10);
+TEST("Spring Break End Mon", new Date(2026, 2, 23), 10);
