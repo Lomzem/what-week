@@ -1,0 +1,14 @@
+<h1 class="hidden place-self-center font-sans text-7xl font-bold">Week</h1>
+
+<script>
+  import { getWeekNumber } from "../utils/getWeekNumber"
+  const START_DATE = new Date(2026, 0, 20)
+
+  const h1 = document.querySelector("h1")
+
+  if (h1) {
+    const weekNumber = getWeekNumber(START_DATE, new Date())
+    h1.innerText = `Week ${weekNumber}`
+    h1.classList.remove("hidden")
+  }
+</script>
