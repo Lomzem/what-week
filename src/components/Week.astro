@@ -1,14 +1,25 @@
-<h1 class="hidden place-self-center font-sans text-7xl font-bold">Week</h1>
+<h1
+  class="mx-auto flex w-fit flex-col items-center place-self-center px-6 text-center font-sans leading-none font-semibold tracking-tight opacity-0"
+>
+  <span class="block text-center text-3xl tracking-[0.2em] uppercase">Week</span><span
+    id="number"
+    class="block text-center text-9xl tabular-nums"></span>
+</h1>
 
 <script>
   import { getWeekNumber } from "../utils/getWeekNumber"
+
+  const $ = document.querySelector.bind(document)
+
   const START_DATE = new Date(2026, 0, 20)
 
-  const h1 = document.querySelector("h1")
+  const h1 = $("h1")
+  const span = $("#number")
 
-  if (h1) {
+  if (h1 && span) {
     const weekNumber = getWeekNumber(START_DATE, new Date())
-    h1.innerText = `Week ${weekNumber}`
-    h1.classList.remove("hidden")
+    span.textContent = weekNumber.toString()
+
+    h1.classList.remove("opacity-0")
   }
 </script>
